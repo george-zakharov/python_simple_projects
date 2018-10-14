@@ -3,6 +3,33 @@
 
 def basic():
     print('Basic calculator is activated')
+    source_data = {
+        'first_number': float(input('Type in first number: ')),
+        'operation': str(input('Type in operation sign: ')),
+        'second_number': float(input('Type in second number: ')),
+    }
+
+    if source_data['operation'] not in ['+', '-', '*', '/']:
+        print('Operation sign must be one of: + - * /')
+
+    result = do_basic_calculations(source_data)
+
+    print('Result is:')
+    print(result)
+
+
+def do_basic_calculations(data):
+    result = 0
+    if data['operation'] is '+':
+        result = data['first_number'] + data['second_number']
+    elif data['operation'] is '-':
+        result = data['first_number'] - data['second_number']
+    elif data['operation'] is '*':
+        result = data['first_number'] * data['second_number']
+    elif data['operation'] is '/':
+        result = data['first_number'] / data['second_number']
+
+    return result
 
 
 def scientific():
@@ -10,12 +37,10 @@ def scientific():
 
 
 print('Select calculator type:\n1.Basic\n2.Scietific\n')
-
-calculatorType = int(input('Enter calculator number: '))
-2
-if calculatorType == 1:
+calculator_type = int(input('Enter calculator number: '))
+if calculator_type == 1:
     basic()
-elif calculatorType == 2:
+elif calculator_type == 2:
     scientific()
 else:
     print('Enter valid number of calculator type, please!')
