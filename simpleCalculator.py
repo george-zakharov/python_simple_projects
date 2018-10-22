@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys, math
+
 
 def basic():
     print('Basic calculator is activated')
@@ -43,4 +45,4 @@ if calculator_type == 1:
 elif calculator_type == 2:
     scientific()
 else:
-    print('Enter valid number of calculator type, please!')
+    sys.exit('You should enter valid number of calculator type, please!')
